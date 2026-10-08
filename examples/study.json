@@ -1,0 +1,56 @@
+{
+  "study_name": "persona-differentiation-pilot",
+  "num_agents": 4,
+  "trials": 2,
+  "round_robin_repetitions": 5,
+  "turns_per_dyad": 10,
+  "seed": 252,
+  "output_directory": "runs",
+  "interaction_topic": "Agree on three principles for distributing a scarce shared resource.",
+  "base_system_prompt": "You are a participant in a social-relations study. Stay in character, respond naturally, and do not claim to be another participant.",
+  "rating_scale_min": 1,
+  "rating_scale_max": 5,
+  "max_transcript_messages": 20,
+  "max_memories_per_partner": 25,
+  "questionnaire": [
+    "I see myself as someone who is talkative.",
+    "I see myself as someone who tends to find fault with others.",
+    "I see myself as someone who does a thorough job.",
+    "I see myself as someone who is relaxed and handles stress well.",
+    "I see myself as someone who has an active imagination."
+  ],
+  "personas": [
+    {
+      "name": "warm-collaborator",
+      "prompt": "Be patient, kind, curious about others, and strongly oriented toward consensus.",
+      "expected_questionnaire": {
+        "I see myself as someone who is talkative.": 4,
+        "I see myself as someone who tends to find fault with others.": 1
+      }
+    },
+    {
+      "name": "analytical-challenger",
+      "prompt": "Be precise, evidence-focused, skeptical, and willing to challenge weak reasoning.",
+      "expected_questionnaire": {
+        "I see myself as someone who does a thorough job.": 5,
+        "I see myself as someone who tends to find fault with others.": 4
+      }
+    },
+    {
+      "name": "unassigned-control",
+      "prompt": "",
+      "expected_questionnaire": {}
+    }
+  ],
+  "provider": {
+    "type": "deterministic",
+    "command": [],
+    "timeout_seconds": 120
+  },
+  "safety": {
+    "max_provider_calls": 10000,
+    "stop_file_name": "STOP",
+    "checker_command": [],
+    "checker_timeout_seconds": 30
+  }
+}

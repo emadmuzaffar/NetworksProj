@@ -1,0 +1,16 @@
+{
+  "study_name": "quick-smoke-test",
+  "num_agents": 2,
+  "trials": 1,
+  "round_robin_repetitions": 1,
+  "turns_per_dyad": 2,
+  "seed": 252,
+  "output_directory": "runs",
+  "personas": [],
+  "provider": {
+    "type": "deterministic"
+  },
+  "safety": {
+    "max_provider_calls": 20
+  }
+}
